@@ -12,6 +12,8 @@ const popup = document.querySelector('.popup');
 const popupText = document.querySelector('.popup-text');
 const roomName = document.querySelector('.room-name');
 const leaveRoomBtn = document.querySelector('.leave-button');
+const sendBtn = document.querySelector('.send-button');
+const typingText = document.querySelector('.typing-text');
 
 roomName.innerText= room;
 profile.innerText = 'Hi ' + username;
@@ -20,8 +22,22 @@ socket.emit('joinRoom',{username, room});
 
 textMessage.addEventListener('keydown',(event) =>{
    const message = event.target.value.trim();
-   if(event.key === 'Enter' && message.length != 0){
+   if(event.key !== 'Enter'){
+      socket.emit('typing', `${username} is typing...`);
+   }
+   else if(event.key === 'Enter' && message.length != 0){
       sendMessage(message);
+      socket.emit('typing-stopped');
+      textMessage.value = "";
+      scrollToBottom();
+   }
+});
+
+sendBtn.addEventListener('click',() =>{
+   const message = textMessage.value.trim();
+   if(message.length != 0){
+      sendMessage(message);
+      socket.emit('typing-stopped');
       textMessage.value = "";
       scrollToBottom();
    }
@@ -69,6 +85,14 @@ socket.on('roomUsers',(users) => {
    outputUsers(users)
 })
 
+//typing message
+socket.on('typing',(msg) => {
+   typingText.innerText = msg;
+})
+
+socket.on('typing-stopped',() =>{
+   typingText.innerText = "";
+})
 //leave the room
 leaveRoomBtn.addEventListener('click',() => {
    const leaveRoom = confirm('Are you sure you want to leave the chatroom??');
@@ -92,7 +116,6 @@ socket.on('message',(msg) => {
    appendMessage(msg, 'incoming');
    scrollToBottom();
 })
-
 
 //welcome user
 socket.on('welcome-user',(msg) => {

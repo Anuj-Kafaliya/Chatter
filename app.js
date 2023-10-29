@@ -39,11 +39,16 @@ io.on('connection',(socket) => {
             users: util.getRoomUsers(user.room)
         });
 
+        socket.on('typing',(msg) => {
+            socket.broadcast.to(user.room).emit('typing', msg);
+        })
+
+        socket.on('typing-stopped',() => {
+            socket.broadcast.to(user.room).emit('typing-stopped');
+        })
         socket.on('message', (msg,cb) => {
-            setTimeout(() => {
-                socket.broadcast.to(user.room).emit('message', msg);
-            },2000);
-            cb('message-sent');
+            socket.broadcast.to(user.room).emit('message', msg);
+            cb('message received at server side');
         });
     
         socket.on('disconnect', ()=>{

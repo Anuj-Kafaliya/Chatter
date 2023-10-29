@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px;
+    padding: 40px 40px 10px 40px;
     overflow-y: auto;
     height: 500px;
     gap: 20px;
@@ -109,6 +109,13 @@
         width: 100%;
         font-weight: 600;
     }
+
+    .typing-text{
+        font-size: 12px;
+        color:#8F8BE8;
+        font-weight: 600;
+        font-style: italic;
+    }
 }
 
 .text{
@@ -118,6 +125,8 @@
     border-bottom-left-radius: 8px;
     border: 1px solid #e5e5e5;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
     
     .text-message{
         width: 100%;
@@ -130,6 +139,20 @@
         border-bottom-right-radius: 8px;
         outline: none;
         border: none;
+    }
+
+    .send-button{
+        background-color: #8F8BE8;;
+        color: #fff; /* Green */
+        border: none;
+        padding: 10px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        border-bottom-right-radius: 4px;
+        cursor: pointer;
     }
 }
 
