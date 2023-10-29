@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px !important;
+}
+
+.main-page{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    background-color: #f1f1f1;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #8F8BE8;
+    padding: 16px 12px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .heading-text, .profile-header{
+        display: flex;
+        color:#fff;
+        font-weight: 600;
+    }
+
+    .profile-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo{
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.chat-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    overflow-y: auto;
+    height: 500px;
+    gap: 20px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    background-color: #fff;
+
+    .inbox{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .message{
+            padding: 10px;
+            border-radius: 4px;
+            position: relative;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+    }
+
+    .message{
+        padding: 10px;
+        border-radius: 4px;
+        max-width: 300px;
+        position: relative;
+        font-size: 14px;
+    }
+    .incoming-message{
+        background: #8F8BE8;
+        color: #fff;
+        align-self: flex-start;  
+    }
+    .outgoing-message {
+        background: #ECEAEA;
+        color: #787986;
+        align-self: flex-end;
+    }
+    .message h4 {
+        position:absolute;
+        top: -20px;
+        left: 0;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .helper-text{
+        position:absolute;
+        top: 40px;
+        left: 0;
+        color: #8F8BE8;
+        font-size: 12px;
+        text-align: right;
+        width: 100%;
+        font-weight: 600;
+    }
+}
+
+.text{
+    width: 100%;
+    background-color: #fff;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    
+    .text-message{
+        width: 100%;
+        box-sizing: border-box;
+        font-size:14px;
+        line-height: 20px;
+        padding: 16px 12px;
+        background-color: #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        outline: none;
+        border: none;
+    }
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    color: black; /* Green */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popup-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -200%;
+    left: -10%;
+    list-style: none;
+  }
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup.show  .popup-text{
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  .leave-button{
+    background-color: #e7e7e7;
+    color: black; /* Green */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }

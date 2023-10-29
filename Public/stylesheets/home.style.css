@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	background: #e6e9ff;
+	margin: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: #e6e9ff;
+	color: #667aff;
+	border: 0;
+	font-size: 14px;
+}
+
+
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: #8F8BE8;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: #fff;
+	border-radius: 4px;
+}
+
+.join-main p {
+	margin-bottom: 20px;
+	color: #757575;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
+	color: #757575;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}

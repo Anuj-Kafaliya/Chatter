@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatter APP</title>
+    <link rel="stylesheet" href="/stylesheets/Interface.style.css">
+</head>
+<body>
+    <div class="main-page"> 
+        <div class="header">
+            <div class="title">
+                <img src="../assets/icon.png" class="logo"/>
+                <div class="heading-text">
+                    <p>Chatter</p>
+                </div> 
+            </div>
+            <div class="profile-header">
+                <p class="room-name"></p>
+                <button class="leave-button">Leave room</button>
+                <div class="popup">users
+                    <div class="popup-text" id="myPopup"></div>
+                </div>
+                <img src="../assets/user.png" />
+                <p class="profile"></p>
+            </div>        
+        </div>
+        <div class="chat-box">
+            <div class="inbox"></div>
+        </div>
+        <div class="text">
+            <input type="text" class="text-message" placeholder="Write a message..."></textarea>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
